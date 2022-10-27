@@ -5,8 +5,8 @@ namespace Database\Seeders;
 
 
 use Illuminate\Database\Seeder;
-
 use App\Models\Visitor;
+Use App\Models\User;
 
 
 class VisitorSeeder extends Seeder
