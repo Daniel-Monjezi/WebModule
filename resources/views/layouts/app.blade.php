@@ -6,7 +6,6 @@
         <title>Signit - @yield('title')</title>
         @vite('resources/css/app.css')
     </head>
-
     <body>
         <section class="pageHeader">
             <div class="container mx-auto">
@@ -14,12 +13,15 @@
             </div>
         </section>
         <section class="navigation">
-            <div class="container mx-auto">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/visitors">Visitors</a></li>
-                    <li><a href="/visitors/create">Add visitor</a></li>
-                </ul>
+            <di<ul class="navbar">
+                <li><a href="/">Home</a></li>
+                @if (Auth::guest())
+                <li><a href="/login">Login</a></li>
+                @else
+                <li><a href="/visitors">Visitors</a></li>
+                <li><a href="/visitors/create">Sign the guestbook</a></li>
+                @endif
+            </ul>
             </div>
         </section>
         <section class="pageTitle">
