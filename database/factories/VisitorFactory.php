@@ -6,6 +6,7 @@ namespace Database\Factories;
 
 use App\Models\Visitor;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\User;
 
 
 class VisitorFactory extends Factory
@@ -19,8 +20,7 @@ class VisitorFactory extends Factory
 
     {
 
-    return ['name' => $this->faker->name(),'comments' => $this->faker->realText(500)];
-
+        return ['user_id' => User::factory(1)->create()->first(),'comments' => $this->faker->realText(500)];
     }
 
 }
